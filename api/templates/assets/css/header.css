@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.header {
+    height: 20%;
+    width: auto;
+    color: orange;
+    background-color: white;
+    border-bottom: 2px solid #D4D4D4;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.header nav {
+    display: flex;
+    flex-direction: row;
+    padding: 0 5px 0 5px;
+}
+.header nav a{
+    display: block;
+    font-size: 25px;
+    color: orange;
+    padding: 8px 10px 8px 10px;
+    text-decoration: none;
+    font-family: "Kufam", sans-serif;
+    font-optical-sizing: auto;
+}
+.header nav a:hover {
+    background-color: #d5d5d5;
+    color: white;
+}
+.header header h1 {
+    font-size:35px;
+    font-family: "Kufam", sans-serif;
+}
+header h1 span {
+    color: #FFD580;
+}
