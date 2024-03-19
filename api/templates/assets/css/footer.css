@@ -1,0 +1,25 @@
+.foot {
+    color: white;
+    background-color: orange;
+    padding: 10px;
+    width: 100%;
+    max-height: 15%;
+}
+.foot .copy {
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    display: block;
+}
+.foot h4 {
+    font-size: 20px;
+    padding: 6px;
+    display: block;
+}
+.foot a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px;
+
+}

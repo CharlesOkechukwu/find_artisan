@@ -45,6 +45,8 @@ body {
 .header header h1 {
     font-size:35px;
     font-family: "Kufam", sans-serif;
+    padding: 0 5px 0 0;
+    margin-left: 5px;
 }
 header h1 span {
     color: #FFD580;
