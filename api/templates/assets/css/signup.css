@@ -1,0 +1,45 @@
+#signup {
+    display: block;
+    padding: 15px 20px;
+    height: 60%;
+    width: auto;
+    color: orange;
+    background-color: white;
+}
+#signup form {
+    align-self:center;
+    align-self:center;
+    text-align: center;
+}
+#signup h3 {
+    align-self: center;
+    text-align: center;
+    font-size: 30px;
+    font-family:"Kufam", sans-serif;
+    padding: 8px;
+}
+#signup form input {
+    padding: 4px;
+    width: 60%;
+    color: #D4D4D4;
+    margin-bottom: 4px;
+    margin-top: 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#signup  #submit{
+    background-color: orange;
+    color: white;
+    margin-top: 6px;
+    width: 61%;
+    padding: 8px 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 10px;
+    font-size: 20px;
+}
+#signup form label {
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 10px;
+}
