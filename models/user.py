@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """Module for User class"""
 import bcrypt
+from sqlalchemy.ext.declarative import declarative_base
 
 
-class User():
+Base = declarative_base()
+class User(Base):
     """User class conatins all the details of the user"""
     def __init__(self, **kwargs):
         """initiate variables"""
