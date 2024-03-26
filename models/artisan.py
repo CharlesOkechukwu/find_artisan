@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """artisan class module"""
 from user import User, Base
-from storage import Storage
+from models import storage
 import sqlalchemy
 from sqlalchemy import Column, String, Integer, Foreignkey, Float
 from sqlalchemy.orm import relationship
