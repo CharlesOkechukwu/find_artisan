@@ -24,6 +24,7 @@ class Storage:
         Base.metadata.create_all(self.__engine)
         s_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(s_factory)
+        self.__session = Session
 
     def add_new(self, cls_obj):
         """add new entry to table"""
@@ -51,4 +52,4 @@ class Storage:
     
     def close(self):
         """close all connections to the database"""
-        self.__session.remove()
+        self.__session.close()
