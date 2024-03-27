@@ -1,24 +1,25 @@
 {% include "header.html" %}
 <div id="signup" >
-            <form class="signup_form">
+            <form class="signup_form" action="{{ url_for('fa_app.register') }}" method="post">
                 <h3>Register</h3>
                 <label for="name">Full name:</label><br>
-                <input type="text" id="fname" name="name"><br>
+                <input type="text" id="fname" name="name" required><br>
                 <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email"><br>
+                <input type="email" id="email" name="email" required><br>
                 <label for="adress">House address:</label><br>
-                <input type="text" id="address" name="address"><br>
+                <input type="text" id="address" name="address" required><br>
                 <label for="name">City/County:</label><br>
-                <input type="text" id="city" name="city"><br>
+                <input type="text" id="city" name="city" required><br>
                 <label for="name">State:</label><br>
-                <input type="text" id="state" name="state"><br>
+                <input type="text" id="state" name="state" required><br>
                 <label for="name">Country:</label><br>
-                <input type="text" id="country" name="country"><br>
+                <input type="text" id="country" name="country" required><br>
+                <div class="message"><p>{{ msg }}</p></div>
                 <label for="name">Password:</label><br>
-                <input type="password" id="password" name="password"><br>
+                <input type="password" id="password" name="password" required><br>
                 <label for="name">Confirm Password:</label><br>
-                <input type="password" id="cpass" name="cpass"><br>
-                <input type="submit" name="submit" id="submit">
+                <input type="password" id="cpass" name="cpass" required><br>
+                <input type="submit" name="submit" id="submit" value="submit">
             </form>
         </div>
 {% include "footer.html" %}

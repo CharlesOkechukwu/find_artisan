@@ -15,10 +15,10 @@ class User(Base):
     email = Column(String(300), nullable=False, unique=True)
     address = Column(String(300), nullable=True)
     city = Column(String(250), nullable=False)
-    State = Column(String(250), nullable=False)
-    Country = Column(String(250), nullable=False)
+    state = Column(String(250), nullable=False)
+    country = Column(String(250), nullable=False)
     password = Column(String(250), nullable=False)
-    artisan = relationship("Artisan", backref="User")
+    """artisan = relationship("Artisan", backref="User")"""
     def __init__(self, **kwargs):
         """initiate variables"""
         self.name = kwargs['name']
@@ -27,13 +27,12 @@ class User(Base):
         self.city = kwargs['city']
         self.state = kwargs['state']
         self.country = kwargs['country']
-        self.password = kwargs['password']
+        self.__password = kwargs['password']
     
     def set_pass(self):
         """hash password and upload password"""
-        password = self.password
         salt = bcrypt.gensalt()
-        self.passowrd = bcrypt.hashpw(password=password, salt=salt)
+        self.password = bcrypt.hashpw(password=self.__password, salt=salt)
     
     def check_pass(self, db_pass, u_pass):
         """check password entered"""

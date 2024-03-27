@@ -2,7 +2,7 @@
 """storage module for find artisan"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from .user import Base
+from .user import Base, User
 
 
 class Storage:
