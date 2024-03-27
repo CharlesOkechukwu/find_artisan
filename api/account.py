@@ -8,4 +8,4 @@ from models.user import User, Base
 @fa_app.route("/signup", strict_slashes=False)
 def register():
     """render register template and process input"""
-    render_template('signup.html')
+    return render_template('signup.html')
