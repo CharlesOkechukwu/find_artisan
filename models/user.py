@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 """Module for User class"""
 import bcrypt
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, Integer
-from artisan import Artisan
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from models import storage
 
 
 Base = declarative_base()

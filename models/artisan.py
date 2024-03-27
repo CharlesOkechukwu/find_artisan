@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """artisan class module"""
-from user import User, Base
-from models import storage
+from .user import Base
+from . import storage
 import sqlalchemy
 from sqlalchemy import Column, String, Integer, Foreignkey, Float
 from sqlalchemy.orm import relationship
@@ -38,10 +38,10 @@ class Artisan(Base):
     
     def get_service(self, id):
         """get artisan service where id is equal to a_id"""
-        obj = storage.get_obj(id=id)
+        obj = storage.get_obj(Artisan, id=id)
         return obj
     
     def all_services(self, user_id):
         """get all services of a user by id"""
-        services = storage.get_all(user_id)
+        services = storage.get_all(Artisan, user_id)
         return services

@@ -2,7 +2,7 @@
 """storage module for find artisan"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
-from user import User, Base
+from .user import Base
 
 
 class Storage:
@@ -45,6 +45,10 @@ class Storage:
             result = self.__session.query(cls).filter_by(name).all()
         return result
     
-    def delete(self):
+    def delete(self, obj):
         """delete an object from database"""
-        self.__session.close()
+        self.__session.delete(obj)
+    
+    def close(self):
+        """close all connections to the database"""
+        self.__session.remove()
