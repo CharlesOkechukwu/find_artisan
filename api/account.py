@@ -31,3 +31,8 @@ def register():
         storage.add_new(user)
         storage.save()
     return render_template('signup.html')
+
+@fa_app.route("/login", strict_slashes=False, methods=['POST', 'GET'])
+def login():
+    """login a user"""
+    return render_template("login.html")
