@@ -34,7 +34,7 @@ class User(Base):
         salt = bcrypt.gensalt()
         self.password = bcrypt.hashpw(password=self.__password, salt=salt)
     
-    def check_pass(self, db_pass, u_pass):
+    def check_pass(self, password):
         """check password entered"""
-        return bcrypt.checkpw(passowrd=u_pass, hash_password=db_pass)
+        return bcrypt.checkpw(password, self.password.encode('utf-8'))
         

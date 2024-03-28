@@ -34,10 +34,10 @@ class Storage:
         """execute queries and commit changes"""
         self.__session.commit()
     
-    def get_obj(self, cls, attr):
+    def get_obj(self, cls, email):
         """get a record from a table in the database"""
         if cls is not None:
-            obj = self.__session.query(cls).filter_by(attr).first()
+            obj = self.__session.query(cls).filter_by(email=email).first()
         return obj
     
     def get_all(self, cls, name):

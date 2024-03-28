@@ -35,4 +35,13 @@ def register():
 @fa_app.route("/login", strict_slashes=False, methods=['POST', 'GET'])
 def login():
     """login a user"""
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        password = password.encode('utf-8')
+        obj = storage.get_obj(User, email)
+        if obj is not None:
+            verify = obj.check_pass(password)
+            if verify == True:
+                return "logged in sucessfully"
     return render_template("login.html")
