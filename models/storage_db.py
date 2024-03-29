@@ -3,6 +3,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from .user import Base, User
+from .artisan import Artisan
+from .review import Review
 
 
 class Storage:

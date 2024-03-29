@@ -1,9 +1,11 @@
 {% include "header.html" %}
+{% if session.loggedin == True %}
 <div class="add-artisan">
     <h4>Welcome, {{ session.username }}</h4>
     <div class="add-service">
         <p>Do you render a service?</p>
-    <button class="add"><a href="#"><i class="fa-solid fa-plus"></i>   Add Service</a></button>
+    <button class="add"><a href="{{ url_for('fa_app.add_artisan') }}"><i class="fa-solid fa-plus"></i>   Add Service</a></button>
     </div>
 </div>
+{% endif %}
 {% include "footer.html" %}
