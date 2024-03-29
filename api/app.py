@@ -5,6 +5,7 @@ from . import fa_app
 
 
 app = Flask(__name__)
+app.secret_key = "findartisan"
 app.register_blueprint(fa_app)
 
 @app.teardown_appcontext

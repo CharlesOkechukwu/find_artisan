@@ -3,40 +3,48 @@
     padding: 15px 20px;
     height: 60%;
     width: auto;
-    color: orange;
+    color: #FC4B37;
     background-color: white;
 }
 #signup form {
     align-self:center;
     align-self:center;
-    text-align: center;
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 50%;
+    padding: 25px;
+    align-self: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    border-radius: 4px;
 }
 #signup h3 {
     align-self: center;
     text-align: center;
-    font-size: 30px;
-    font-family:"Kufam", sans-serif;
+    font-size: 20px;
+    font-family: sans-serif;
     padding: 8px;
 }
 #signup form input {
-    padding: 4px;
-    width: 60%;
-    color: #D4D4D4;
-    margin-bottom: 4px;
-    margin-top: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
     border: 2px solid #D4D4D4;
-    border-radius: 10px;
-    font-size: 20px;
+    border-radius: 5px;
 }
 #signup  #submit{
-    background-color: orange;
+    margin-top: 5px;
+    background-color: #FC4B37;
     color: white;
-    margin-top: 6px;
-    width: 61%;
-    padding: 8px 5px;
-    border: 2px solid #D4D4D4;
-    border-radius: 10px;
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
     font-size: 20px;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 20px;
+    text-align: center;
 }
 #signup form label {
     font-size: 20px;

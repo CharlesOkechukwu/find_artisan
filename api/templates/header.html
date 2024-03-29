@@ -2,8 +2,11 @@
 <html lang="en">
     <head>
         <title>Find Artisan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <link rel="icon" type="image/png" href="/static/images/icon.png"/>
+        <script src="https://kit.fontawesome.com/51f8b67884.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="/static/css/header.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="/static/css/footer.css"/>
         <link rel="stylesheet" type="text/css" href="/static/css/signup.css"/>
         <link rel="stylesheet" type="text/css" href="/static/css/login.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/home.css"/>
     </head>
     <body>
     <div class="header">
@@ -20,7 +24,12 @@
             </header>
         </div>
         <nav class="nav">
-            <a href="#">Signup</a>
-            <a href="#">Login</a>
+            {% if session.loggedin == True %}
+            <a href="#">Account</a>
+            <a href="/api/logout">Log out</a>
+            {% else %}
+            <a href="/api/signup">Signup</a>
+            <a href="/api/login">Login</a>
+            {% endif %}
         </nav>
     </div>

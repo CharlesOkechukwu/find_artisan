@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """module to handle account api views for fa_app"""
-from flask import render_template, request
+from flask import render_template, request, redirect, session, url_for
 from models import storage
 from . import fa_app
 from models.user import User, Base
@@ -35,6 +35,7 @@ def register():
 @fa_app.route("/login", strict_slashes=False, methods=['POST', 'GET'])
 def login():
     """login a user"""
+    msgs = {}
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -43,5 +44,16 @@ def login():
         if obj is not None:
             verify = obj.check_pass(password)
             if verify == True:
-                return "logged in sucessfully"
-    return render_template("login.html")
+                session['loggedin'] = True
+                session['username'] = obj.name
+                session['id'] = obj.id
+                return redirect(url_for('fa_app.home'))
+            else:
+                msgs.update(login = "Invalid email or password!")
+    return render_template("login.html", msgs=msgs)
+
+@fa_app.route("/logout", strict_slashes=False)
+def logout():
+    """logout a user"""
+    session.clear()
+    return redirect(url_for('fa_app.home'))

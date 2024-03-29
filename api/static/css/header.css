@@ -16,9 +16,9 @@ body {
 .header {
     height: 20%;
     width: auto;
-    color: orange;
+    color: #FC4B37;
     background-color: white;
-    border-bottom: 2px solid #D4D4D4;
+    border-bottom: 2px solid hwb(0 88% 9%);
     padding: 5px;
     margin: 0;
     display: flex;
@@ -33,23 +33,23 @@ body {
 }
 .header nav a{
     display: block;
-    font-size: 25px;
-    color: orange;
+    font-size: 20px;
+    color: #FC4B37;
     padding: 8px 10px 8px 10px;
     text-decoration: none;
     font-family: "Kufam", sans-serif;
     font-optical-sizing: auto;
 }
 .header nav a:hover {
-    background-color: #d5d5d5;
+    background-color: black;
     color: white;
 }
 .header header h1 {
-    font-size:35px;
+    font-size:25px;
     font-family: "Kufam", sans-serif;
     padding: 0 5px 0 0;
     margin-left: 5px;
 }
 header h1 span {
-    color: #FFD580;
+    color: #FC4B37;
 }
