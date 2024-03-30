@@ -1,5 +1,6 @@
 #!/usr/bin/python
 """api entry point for find-artisans"""
+import os
 from flask import Flask, Blueprint
 from . import fa_app
 

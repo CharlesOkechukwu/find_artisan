@@ -1,34 +1,36 @@
 {% include "header.html" %}
 <div class="artisan-container">
-    <form class="artisan-form" action="{{ url_for('fa_app.add_artisan')}}" method="post">
+    <form class="artisan-form" enctype="multipart/form-data" action="{{ url_for('fa_app.add_artisan')}}" method="post">
         <h4>Add Artisan</h4>
-        <label for="business_name">Business name:</label>
+        <p class="success">{{ msgs.success }}</p>
+        <p class="success">{{ msgs.more }}</p>
+        <label for="business_name">Business name:</label><br>
         <input type="text" id="business_name" name="business_name"><br>
-        <label for="service">Service/Ocupation:</label>
-        <input type="text" id="service name=service" value="major service or occupation you're known for" required><br>
-        <label for="address">Business Adress:</label>
+        <label for="service">Service/Ocupation:</label><br>
+        <input type="text" id="service" name="service" required><br>
+        <label for="address">Business Adress:</label><br>
         <input type="text" id="address" name="address" required><br>
-        <label for="city">City:</label>
+        <label for="city">City:</label><br>
         <input type="text" id="city" name="city" required><br>
-        <label for="state">State:</label>
+        <label for="state">State:</label><br>
         <input type="text" id="state" name="state" required><br>
-        <label for="country">Country:</label>
+        <label for="country">Country:</label><br>
         <input type="text" id="country" name="country" required><br>
-        <label for="phone_number">Business Phone Number:</label>
-        <input type="number" id="phone_number" name="phone_number" required><br>
-        <label for="email">Business Email:</label>
+        <label for="phone_number">Business Phone Number:</label><br>
+        <input type="tel" id="phone_number" name="phone_number" required><br>
+        <label for="email">Business Email:</label><br>
         <input type="email" id="email" name="email"><br>
-        <label for="bio">Bio:</label>
-        <textarea id="bio" name="bio" value="Tells us more about your business or more services you render" required></textarea>
-        <label for="image1">Upload Image:</label>
+        <label for="bio">About:</label><br>
+        <textarea id="bio" name="bio" placeholder="Tell us about your business or more services you render" required></textarea><br>
+        <label for="image1">Upload Image:</label><br>
         <input type="file" id="image1" name="image1" required><br>
-        <label for="image2">Upload Second image:</label>
+        <label for="image2">Upload Second image:</label><br>
         <input type="file" id="image2" name="image2"><br>
-        <label for="image3">Upload 3rd image:</label>
+        <label for="image3">Upload 3rd image:</label><br>
         <input type="file" id="image3" name="image3"><br>
-        <label for="image4"> Upload 4th image:</label>
+        <label for="image4"> Upload 4th image:</label><br>
         <input type="file" id="image4" name="image4"><br>
-        <input type="submit" id="image4" name="image4" value="Add Service">
+        <input type="submit" id="submit" name="submit" value="Add Service">
     </form>
 </div>
 {% include "footer.html" %}

@@ -12,6 +12,9 @@ class Artisan(Base):
     a_id = Column(Integer, primary_key=True, autoincrement=True)
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
     address = Column(String(300), nullable=False)
+    city = Column(String(250), nullable=False)
+    state = Column(String(250), nullable=False)
+    country = Column(String(250), nullable=False)
     phone_number = Column(String(300), nullable=False)
     email = Column(String(300), nullable=False)
     name = Column(String(300), nullable=False)
@@ -29,6 +32,9 @@ class Artisan(Base):
         into the artisan table"""
         self.user_id = kwargs["user_id"]
         self.address = kwargs["address"]
+        self.city = kwargs["city"]
+        self.state = kwargs["state"]
+        self.country = kwargs["country"]
         self.phone_number = kwargs["phone_number"]
         self.email = kwargs["email"]
         self.name = kwargs["name"]
@@ -43,7 +49,7 @@ class Artisan(Base):
     def coordinates(self):
         """set coordinates of an address"""
         from geopy.geocoders import Nominatim
-        full_address = self.addess + ", " + self.city + ", " + self.state + ", " + self.country
+        full_address = self.address + ", " + self.city + ", " + self.state + ", " + self.country
         geolocator = Nominatim(user_agent = "fa_app")
         location = geolocator.geocode(full_address)
         self.lat = location.latitude

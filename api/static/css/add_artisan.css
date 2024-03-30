@@ -1,10 +1,14 @@
-.login-form {
+.artisan-container {
+    display: block;
+    padding: 15px 20px;
+    height: 60%;
     width: auto;
-    margin-top: 10px;
-    padding: 20px;
-    align-items:center;
+    color: #FC4B37;
+    background-color: white;
 }
-.login-form form {
+.artisan-container form {
+    align-self:center;
+    align-self:center;
     border: 2px solid rgb(128, 128, 128, 0.2);
     width: 50%;
     padding: 25px;
@@ -13,27 +17,35 @@
     margin-right: 24%;
     border-radius: 4px;
 }
-.login-form h3 {
+.artisan-container form h4 {
     text-align: center;
     color: black;
     font-size: 20px;
     padding: 10px;
     font-family: sans-serif;
 }
-.login-form form label {
-    font-size: 15px;
-    margin-top: 10px;
-    color: #FC4B37;
-    font-family:sans-serif;
-}
-.login-form form input {
+.artisan-container form input {
     width: 100%;
     margin-bottom: 10px;
     padding: 5px;
     border: 2px solid #D4D4D4;
     border-radius: 5px;
 }
-.login-form form #submit {
+.artisan-container form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 5px;
+}
+.artisan-container form label {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #FC4B37;
+    font-family:sans-serif
+}
+
+.artisan-container form #submit {
     margin-top: 5px;
     background-color: #FC4B37;
     color: white;
@@ -48,19 +60,8 @@
     margin-top: 20px;
     text-align: center;
 }
-.login-form form label {
-    text-align: left;
-}
-.error{
-    color: red;
-    text-align: center;
-    font-family: sans-serif;
-}
-.login-form form p {
-    color: #FC4B37;
+.artisan-container form .success {
+    color: rgb(84, 237, 84);
     font-size: 15px;
-    padding: 3px;
-}
-.login-form form p a {
-    color: #FC4B37;
+    padding: 4px;
 }
