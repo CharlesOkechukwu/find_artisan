@@ -42,6 +42,11 @@ class Storage:
             obj = self.__session.query(cls).filter_by(email=email).first()
         return obj
     
+    def get_artisan(self, a_id):
+        """get artisan object from database"""
+        obj = self.__session.query(Artisan).filter_by(a_id=a_id).first()
+        return obj
+    
     def get_all(self, cls, name):
         """get all recors that match an attribute"""
         if cls is not None:

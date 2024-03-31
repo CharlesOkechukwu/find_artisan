@@ -16,7 +16,7 @@ def add_artisan():
     else:
         msgs = {}
         if request.method == 'POST':
-            upload_folder = os.path.join('static', 'uploads')
+            upload_folder = os.path.join('\static', 'uploads')
             if not os.path.exists(upload_folder):
                 os.makedirs(upload_folder)
             current_app.config['UPLOAD'] = upload_folder
@@ -70,3 +70,11 @@ def add_artisan():
             msgs.update(success = "Service added sucessfully!")
             msgs.update(more = "Have more services you render? Add them below!")
         return render_template('add_artisan.html', msgs=msgs)
+
+@fa_app.route("/artisan/<a_id>", strict_slashes=False)
+def view_artisan(a_id):
+    """view an artisan details on a single page"""
+    artisan = storage.get_artisan(a_id)
+    if artisan is None:
+        return "no artisan found"
+    return render_template('view_artisan.html', artisan=artisan)
