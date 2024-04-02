@@ -43,3 +43,8 @@
 .add-artisan .add-service button i {
     padding: 0 3px 0 0;
 }
+.content {
+    width: 100%;
+    background-image: url("../images/map.jpg");
+    height: 70vh;
+}

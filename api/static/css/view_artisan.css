@@ -1,0 +1,179 @@
+.view-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 25px 0;
+    display: flex;
+}
+.view-container .sub-container {
+    height: 100%;
+    width: 70%;
+}
+.view-container .sub-container .top-view {
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+}
+.view-container .top-view .main-image {
+    display: block;
+    width: 60%;
+    padding: 0 15px 0 5px;
+}
+.view-container .top-view .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.view-container .top-view .details {
+    padding: 0 0 0  15px;
+    color: black;   
+}
+.view-container .top-view .details h1 {
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.view-container .top-view .details h5 {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-bottom: 15px;
+    color: #FC4B37;
+}
+.view-container .top-view .details p {
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 5px;
+}
+.view-container .sub-container .image-header {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #FC4B37;
+    padding: 10px;
+    margin-left: 10px;
+}
+.view-container .sub-container .image-header h4 {
+    padding-left: 10px;
+}
+.view-container .sub-container .images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    max-height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 10px 0 10px 0;
+}
+.view-container .sub-container .images img {
+    padding: 0 10px 0 0;
+    width: 30%;
+    height: 100%;
+    max-height: 180px;
+    object-fit: cover;
+}
+.view-container .sub-container .contact-header {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #FC4B37;
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
+}
+.view-container .sub-container .contact-header h4{
+    padding-left: 10px;
+}
+.view-container .sub-container .contact {
+    display: flex;
+    padding: 0 10px 0 10px;
+    font-size: 15px;
+}
+.view-container .sub-container .contact .address {
+    margin-right: 25px;
+}
+.view-container .sub-container .contact p {
+    font-size: 18px;
+    padding: 5px;
+}
+.view-container .review {
+    width: 27%;
+    height: 100%;
+    border-left: 2px solid #D4D4D4;
+    padding: 0 10px 8px 10px;
+}
+.view-container .review form {
+    width: 100%;
+    border-bottom:2px solid #D4D4D4;
+    padding-bottom: 10px;
+}
+.view-container .review form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 5px;
+}
+.view-container .review form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 5px;
+}
+.view-container .review form button {
+    margin-top: 5px;
+    background-color: #FC4B37;
+    color: white;
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: center;
+}
+.view-container .review form h5 {
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    font-family: sans-serif;
+}
+.view-container .review form label {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #FC4B37;
+    font-family:sans-serif;
+}
+.view-container .all-reviews {
+    width: 100%;
+}
+.view-container .all-reviews h4 {
+    text-align: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: black;
+    padding: 10px 0 10px 0;
+}
+.view-container .all-reviews .review-card {
+    padding: 10px;
+    border-bottom: 2px solid #D4D4D4;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.view-container .all-reviews .review-card h5 {
+    color: black;
+    font-size: 17px;
+    font-family: sans-serif;
+    padding: 0 0 4px 0;
+}
+.view-container .all-reviews .review-card .rate i {
+    color: #FC4B37;
+}
+.view-container .all-reviews .review-card .comment p {
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px 0 10px 0;
+}

@@ -53,6 +53,18 @@ class Storage:
             result = self.__session.query(cls).filter_by(name).all()
         return result
     
+    def get_reviews(self, a_id):
+        """get all reviews for an artisan"""
+        reviews = self.__session.query(Review).filter_by(a_id=a_id).all()
+        return reviews
+    
+    def get_services(self, input):
+        """Select all services that match a string"""
+        services = self.__session.query(Artisan).filter(Artisan.service.like(input).all())
+        if services is None:
+            return None
+        return services
+    
     def delete(self, obj):
         """delete an object from database"""
         self.__session.delete(obj)

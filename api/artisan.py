@@ -4,6 +4,7 @@ import os
 from flask import render_template, request, redirect, url_for, session, current_app
 from models import storage
 from . import fa_app
+from flask import jsonify
 from werkzeug.utils import secure_filename
 from models.artisan import Artisan
 
@@ -75,6 +76,15 @@ def add_artisan():
 def view_artisan(a_id):
     """view an artisan details on a single page"""
     artisan = storage.get_artisan(a_id)
+    reviews = storage.get_reviews(a_id)
     if artisan is None:
         return "no artisan found"
-    return render_template('view_artisan.html', artisan=artisan)
+    return render_template('view_artisan.html', artisan=artisan, reviews=reviews)
+
+@fa_app.route("/services/<input>", strict_slashes=False)
+def services(input):
+    """view all services"""
+    services = storage.get_services(input)
+    if services is None:
+        return {"error": "Sorry Service not found!"}
+    return jsonify(services)

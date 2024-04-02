@@ -1,3 +1,99 @@
 {% include "header.html" %}
-<img src="{{ artisan.image1}}" alt="Image1" >
+<div class="view-container">
+    <div class="sub-container">
+        <div class="top-view">
+            <div class="main-image">
+                <img src="{{ artisan.image1 }}" alt="main-image">
+            </div>
+            <div class="details">
+                {% if artisan.business_name == None %}
+                <h1>{{ artisan.name }}</h1>
+                {% else %}
+                <h1>{{ artisan.business_name }}</h1>
+                {% endif %}
+                <h5>{{ artisan.service }}</h5>
+                <p><b>About:</b><br>{{ artisan.bio }}</p>
+            </div>
+        </div>
+        <duv class="image-header">
+            <h4>Samples Of Our Work</h4>
+        </duv>
+        <div class="images">
+            {% if artisan.image2 != None %}
+            <img src="{{ artisan.image2 }}" alt="image2">
+            {% endif %}
+            {% if artisan.image3 != None %}
+            <img src="{{ artisan.image3 }}" alt="image3">
+            {% endif %}
+            {% if artisan.image4 != None %}
+            <img src="{{ artisan.image4 }}" alt="image4">
+            {% endif %}
+        </div>
+        <div class="contact-header">
+            <h4>Contact Details:</h4>
+        </div>
+        <div class="contact">
+            <div class="address">
+                <p><i class="fa-solid fa-location-dot"></i> <span>Address:</span> {{ artisan.address }}, {{ artisan.city }}, {{ artisan.state }} State</p>
+                <p><i class="fa-solid fa-flag"></i> Country: {{ artisan.country }}</p>
+            </div>
+            <div class="contact-details">
+                <p><i class="fa-solid fa-phone"></i> Phone Number: {{ artisan.phone_number }}</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: {{ artisan.email }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="review">
+        {% if session.loggedin == True %}
+        <form class="review-form" action="{{ url_for('fa_app.add_review', a_id=artisan.a_id) }}" method="post">
+            <h5>Post A Review</h5>
+            <label for="rating">Rating:</label><br>
+            <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+            <label for="comment">Comment:</label><br>
+            <textarea id="comment" name="comment" placeholder="Leave a comment about service rendered by this artisan"></textarea><br>
+            <button type="submit" id="submit" name="submit">Post A Review</button>
+        </form>
+        {% endif %}
+        <div class="all-reviews">
+            <h4>Reviews</h4>
+            {% for review in reviews %}
+            <div class="review-card">
+                <h5>{{ review.rname }}</h5>
+                {% if review.rating == 1 %}
+                <p class="rate"><i class="fas fa-star"></i></p>
+                {% elif review.rating == 2 %}
+                <p class="rate">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                {% elif review.rating == 3 %}
+                <p class="rate">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                {% elif review.rating == 4 %}
+                <p class="rate">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                {% else %}
+                <p class="rate">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </p>
+                {% endif %}
+                <div class="comment">
+                    <p>{{ review.comment }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% include "footer.html" %}
