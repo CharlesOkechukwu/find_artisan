@@ -47,12 +47,21 @@ class Storage:
         obj = self.__session.query(Artisan).filter_by(a_id=a_id).first()
         return obj
     
-    def get_all(self, cls, name):
-        """get all recors that match an attribute"""
-        if cls is not None:
-            result = self.__session.query(cls).filter_by(name).all()
-        return result
+    def get_by_city(self, city, service):
+        """get certain artisans in a city based on their service"""
+        artisans = self.__session.query(Artisan).filter_by(city=city, service=service).all()
+        return artisans
     
+    def get_by_state(self, state, service):
+        """get all artisans in a state rendering a service"""
+        artisans = self.__session.query(Artisan).filter_by(state=state, service=service).all()
+        return artisans
+    
+    def get_by_country(self, country, service):
+        """get all artisans in a country rendering a service"""
+        artisans = self.__session.query(Artisan).filter_by(country=country, service=service).all()
+        return artisans
+
     def get_reviews(self, a_id):
         """get all reviews for an artisan"""
         reviews = self.__session.query(Review).filter_by(a_id=a_id).all()
@@ -60,7 +69,8 @@ class Storage:
     
     def get_services(self, input):
         """Select all services that match a string"""
-        services = self.__session.query(Artisan).filter(Artisan.service.like(input).all())
+        querystr = "%{}%".format(input)
+        services = self.__session.query(Artisan).filter(Artisan.service.like(querystr)).all()
         if services is None:
             return None
         return services

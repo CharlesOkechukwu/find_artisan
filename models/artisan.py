@@ -52,5 +52,15 @@ class Artisan(Base):
         full_address = self.address + ", " + self.city + ", " + self.state + ", " + self.country
         geolocator = Nominatim(user_agent = "fa_app")
         location = geolocator.geocode(full_address)
+        if location is None:
+            location = geolocator.geocode(self.city)
         self.lat = location.latitude
         self.long = location.longitude
+    
+    def get_distance(self, lat, long):
+        """get distance between two addresses or location in kilometer"""
+        from geopy import distance
+        obj_loc = (self.lat, self.long)
+        user_loc = (lat, long)
+        dist = distance.distance(obj_loc, user_loc).km
+        return dist

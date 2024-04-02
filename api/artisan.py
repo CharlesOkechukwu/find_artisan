@@ -81,10 +81,50 @@ def view_artisan(a_id):
         return "no artisan found"
     return render_template('view_artisan.html', artisan=artisan, reviews=reviews)
 
-@fa_app.route("/services/<input>", strict_slashes=False)
+@fa_app.route("/services/<input>", strict_slashes=False, methods=['POST', 'GET'])
 def services(input):
     """view all services"""
-    services = storage.get_services(input)
-    if services is None:
-        return {"error": "Sorry Service not found!"}
+    services = None
+    get_services = storage.get_services(input)
+    services = [service.service for service in get_services]
+    services = list(set(services))
+    if services == []:
+        return ["Sorry can't find the service you're looking for"]
     return jsonify(services)
+
+@fa_app.route("/artisan/find", strict_slashes=False, methods=['POST'])
+def find_artisan():
+    """find artisans that render a service around you"""
+    from geopy.geocoders import Nominatim
+    if request.method == 'POST':
+        service = request.form['search']
+        address = request.form['address']
+        city = request.form['city']
+        state = request.form['state']
+        country = request.form['country']
+        filter = request.form.get('filters')
+
+        full_address = address + ", " + city + ", " + country
+
+        geolocator = Nominatim(user_agent = "fa_app")
+        location = geolocator.geocode(full_address)
+        if location is None:
+            location = geolocator.geocode(city)
+        lat = location.latitude
+        long = location.longitude
+
+        if filter == "Nearby(Less than 30km away)":
+            objs = storage.get_by_city(city, service)
+            artisan = []
+            for obj in objs:
+                distance = obj.get_distance(lat, long)
+                if distance < 30:
+                    artisans.append(obj)
+        elif filter == "Within current city":
+            artisans = storage.get_by_city(city, service)
+        elif filter == "Anywhere in the state":
+            artisans = storage.get_by_state(state, service)
+        else:
+            artisans = storage.get_by_country(country, service)
+        return render_template('display.html', artisans=artisans)
+    

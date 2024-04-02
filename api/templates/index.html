@@ -10,11 +10,25 @@
 {% endif %}
 <div class="content">
     <div class="find">
-        <form class="find-artisan">
+        <form class="find-artisan" action="{{ url_for('fa_app.find_artisan')}}", method="post">
             <h4>Find Artisans Near You</h4>
-            <input type="text" id="search" name="search" placeholder="Enter the service you're looking for" required>
-            <div id="suggestions" class="suggestions"></div>
+            <input type="text" id="search" name="search" placeholder="Enter the service you're looking for" required><br>
+            <div id="suggestions" class="suggestions">
+                <ul id="options"></ul>
+            </div>
+            <input type="text" id="address" name="address" placeholder="current address" required><br>
+            <input type="text" id="city" name="city" placeholder="Current city" required><br>
+            <input type="text" id="state" name="state" placeholder="Current state" required><br>
+            <input type="text" id="country" name="country" placeholder="Current country" required><br>
+            <select id="filters" name="filters">
+                <option value="nearby">Nearby(Less than 30km away)</option>
+                <option value="in-city"> Within current city</option>
+                <option value="in-state">Anywhere in the state</option>
+                <option vale="in-country">Anywhere in the country</option>
+            </select>
+            <button type="submit" name="submit">Find Artisans</button>
         </form>
     </div>
 </div>
+<script src="/static/scripts/services.js"></script>
 {% include "footer.html" %}
