@@ -17,10 +17,9 @@ def add_artisan():
     else:
         msgs = {}
         if request.method == 'POST':
-            upload_folder = os.path.join('\static', 'uploads')
-            if not os.path.exists(upload_folder):
-                os.makedirs(upload_folder)
+            upload_folder = 'api/static/uploads'
             current_app.config['UPLOAD'] = upload_folder
+            current_app.config['UPLOAD_FOLDER'] = '/static/uploads/'
             name = session['username']
             business_name = request.form['business_name']
             service = request.form.get('service', False)
@@ -35,26 +34,28 @@ def add_artisan():
                 file1 = request.files['image1']
                 filename = secure_filename(file1.filename)
                 file1.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image1 = os.path.join(current_app.config['UPLOAD'], filename)
+                image1 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            else:
+                image1 = None
             if request.files['image2'] != '':
                 file2 = request.files['image2']
                 filename = secure_filename(file2.filename)
                 file2.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image2 = os.path.join(current_app.config['UPLOAD'], filename)
+                image2 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             else:
                 image2 = None
             if request.files['image3'] != '':
                 file3 = request.files['image3']
                 filename = secure_filename(file3.filename)
                 file3.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image3 = os.path.join(current_app.config['UPLOAD'], filename)
+                image3 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             else:
                 image3 = None
             if request.files['image4'] != '':
                 file4 = request.files['image4']
                 filename = secure_filename(file4.filename)
                 file4.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image4 = os.path.join(current_app.config['UPLOAD'], filename)
+                image4 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             else:
                 image4 = None
             artisan_dict = {

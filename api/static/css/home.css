@@ -46,7 +46,7 @@
 .content {
     width: 100%;
     background-image: url("../images/map.jpg");
-    height: 70vh;
+    height: 80vh;
 }
 .content .find form h4 {
     align-self: center;

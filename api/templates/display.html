@@ -1,6 +1,19 @@
 {% include 'header.html' %}
 <div class="container">
     {% for artisan in artisans %}
-    <p>artisan.business_name</p>
+    <div class="artisan">
+        <img src="{{ artisan.image1 }}" alt="main-image">
+        <div class="contact">
+            {% if artisan.business_name == None %}
+            <h4>{{ artisan.name }}</h4>
+            {% else %}
+            <h4>{{ artisan.business_name }}</h4>
+            {% endif %}
+            <h5>{{ artisan.service }}</h5>
+            <p>{{ artisan.address }}</p>
+            <button><a href="{{ url_for('fa_app.view_artisan', a_id=artisan.a_id) }}">View Artisan</a></button>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 {% include 'footer.html' %}
