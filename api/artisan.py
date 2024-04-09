@@ -114,18 +114,23 @@ def find_artisan():
         lat = location.latitude
         long = location.longitude
 
-        if filter == "Nearby(Less than 30km away)":
+        artisans = None
+        if filter == "nearby":
+            print("nearby")
             objs = storage.get_by_city(city, service)
-            artisan = []
+            artisans = []
             for obj in objs:
                 distance = obj.get_distance(lat, long)
                 if distance < 30:
                     artisans.append(obj)
-        elif filter == "Within current city":
+        elif filter == "in-city":
+            print("city")
             artisans = storage.get_by_city(city, service)
-        elif filter == "Anywhere in the state":
+        elif filter == "in-state":
+            print("state")
             artisans = storage.get_by_state(state, service)
         else:
+            print("country")
             artisans = storage.get_by_country(country, service)
         return render_template('display.html', artisans=artisans)
     

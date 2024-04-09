@@ -42,6 +42,11 @@ class Storage:
             obj = self.__session.query(cls).filter_by(email=email).first()
         return obj
     
+    def get_user(self, id):
+        """get user object from database by id"""
+        user = self.__session.query(User).filter_by(id=id).first()
+        return user
+    
     def get_artisan(self, a_id):
         """get artisan object from database"""
         obj = self.__session.query(Artisan).filter_by(a_id=a_id).first()
@@ -73,6 +78,11 @@ class Storage:
         services = self.__session.query(Artisan).filter(Artisan.service.like(querystr)).all()
         if services is None:
             return None
+        return services
+    
+    def get_myservices(self, user_id):
+        """get all services offered by an artisan"""
+        services = self.__session.query(Artisan).filter_by(user_id=user_id).all()
         return services
     
     def delete(self, obj):

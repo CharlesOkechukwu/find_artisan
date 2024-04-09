@@ -1,0 +1,43 @@
+{% include 'header.html' %}
+{% if session.loggedin == True %}
+<div class="box-container">
+    <h1 class="title">{{ user.name }}</h1><br>
+    <h4>{{ user.email }}</h4><br>
+    <div class="panel">
+        <a href="#" class="active" id="profile">Profile</a>
+        <a href="#"class="" id="services">Services</a>
+    </div>
+    <div class="profile">
+        <form id="form" action="{{ url_for('fa_app.account')}}" method="post" class="">
+            <input type="text" name="address" value="{{ user.address }}" id="adress"><br>
+            <input type="text" name="city" value="{{ user.city }}" id="city"><br>
+            <input type="text" name="state" value="{{ user.state }}" id="state"><br>
+            <input type="text" name="country" id="country" value="{{ user.country}}"><br>
+            <button type="submit" name="submit" id="submit">Update</button>
+        </form>
+    </div>
+    <div class="display-service">
+        {% if services == None %}
+        <h3>You have not added any service yet!</h3>
+        {% else %}
+        <table id="myservices" class="hide">
+            {% for service in services %}
+            <tr>
+                <td><img src="{{ service.image1 }}" alt="{{ service.business_name }}"></td>
+                <td>{% if service.business_name == None %}
+                    <h5>{{ service.name }}</h5>
+                    {% else %}
+                    <h5>{{ service.business_name }}</h5>
+                    {% endif %}
+                </td>
+                <td><button>Edit</td>
+                <td><button>Delete</button></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+    </div>
+</div>
+{% endif %}
+<script src="/static/scripts/account.js"></script>
+{% include 'footer.html' %}

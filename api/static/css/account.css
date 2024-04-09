@@ -1,0 +1,121 @@
+.box-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+}
+.box-container h1 {
+    padding: 0px 10px;
+    font-family: sans-serif;
+}
+.box-container h4 {
+    padding: 0px 10px;
+    font-family: sans-serif;
+}
+.box-container .panel {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 25%;
+    margin-left: 25%;
+    align-items: center;
+    padding: 15px 15px 0 15px;
+    margin-bottom: 15px;
+}
+.box-container .panel a {
+    text-decoration: none;
+    color: black;
+    font-family: sans-serif;
+    font-size: 30px;
+    padding: 10px 10px 5px 10px;
+    border-bottom: 2px solid #f4dbdb;
+}
+.box-container .panel a:hover {
+    font-size: 35px;
+}
+.box-container .panel .active {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid #FC4B37;
+}
+.box-container .profile form {
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 50%;
+    padding: 25px;
+    align-self: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.box-container .profile form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 2px solid #D4D4D4;
+    border-radius: 5px; 
+}
+.box-container .profile form #submit {
+    margin-top: 5px;
+    background-color: #FC4B37;
+    color: white;
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 20px;
+    text-align: center;
+}
+.box-container .display-service table {
+    width: 50%;
+    padding: 15px;
+    align-self: center;
+    margin-left: 24%;
+    margin-right: 24%;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: sans-serif;
+}
+.box-container .display-service table tr {
+    width: 100%;
+    max-height: 120px;
+    min-height: 100px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
+    align-content: center;
+    border-bottom: 2px solid rgb(128, 128, 128, 0.2);
+}
+.box-container .display-service table tr td {
+    padding: 15px;
+}
+.box-container .display-service table tr td img {
+    width: 100px;
+    height: 100px;
+}
+.box-container .display-service table tr td h5 {
+    font-size: 20px;
+}
+.box-container .display-service table tr td button {
+    margin-top: 5px;
+    background-color: #FC4B37;
+    color: white;
+    border: 2px solid rgb(128, 128, 128, 0.2);
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    align-self: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 20px;
+    text-align: center;  
+}
+.hide {
+    display: none;
+}

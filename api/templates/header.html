@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="/static/css/add_artisan.css"/>
         <link rel="stylesheet" type="text/css" href="/static/css/view_artisan.css"/>
         <link rel="stylesheet" type="text/css" href="/static/css/display.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/account.css"/>
     </head>
     <body>
     <div class="header">
@@ -28,7 +29,7 @@
         </div>
         <nav class="nav">
             {% if session.loggedin == True %}
-            <a href="#">Account</a>
+            <a href="{{ url_for('fa_app.account')}}">Account</a>
             <a href="/api/logout">Log out</a>
             {% else %}
             <a href="/api/signup">Signup</a>

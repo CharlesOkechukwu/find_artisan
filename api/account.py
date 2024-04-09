@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """module to handle account api views for fa_app"""
-from flask import render_template, request, redirect, session, url_for
+from flask import render_template, request, redirect, session, url_for, flash
 from models import storage
 from . import fa_app
 from models.user import User, Base
@@ -51,6 +51,34 @@ def login():
             else:
                 msgs.update(login = "Invalid email or password!")
     return render_template("login.html", msgs=msgs)
+
+@fa_app.route('/account', strict_slashes=False, methods=['POST', 'GET'])
+def account():
+    """display account details"""
+    if session['loggedin'] == True:
+        user = storage.get_user(session['id'])
+        if request.method == 'GET':
+            services = storage.get_myservices(session['id'])
+            return render_template('account.html', user=user, services=services)
+        else:
+            address = request.form['address']
+            city = request.form['city']
+            state = request.form['state']
+            country = request.form['country']
+
+            if address != "":
+                user.address = address
+            if city != "":
+                user.city = city
+            if state != "":
+                user.state = state
+            if country != "":
+                user.country = country
+            storage.save()
+            flash("Account updated sucessfully")
+            return redirect(url_for('fa_app.account'))
+    else:
+        return redirect(url_for('fa_app.login'))
 
 @fa_app.route("/logout", strict_slashes=False)
 def logout():
