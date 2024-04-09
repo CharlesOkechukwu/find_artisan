@@ -116,6 +116,16 @@
     margin-top: 20px;
     text-align: center;  
 }
+.box-container .display-service table tr td button a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+}
+.success {
+    color: green;
+    text-align: center;
+}
 .hide {
     display: none;
 }

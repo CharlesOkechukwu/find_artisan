@@ -16,10 +16,10 @@
             <div id="suggestions" class="suggestions">
                 <ul id="options"></ul>
             </div>
-            <input type="text" id="address" name="address" placeholder="current address" autocomplete="off" required><br>
-            <input type="text" id="city" name="city" placeholder="Current city" autocomplete="off" required><br>
-            <input type="text" id="state" name="state" placeholder="Current state" required><br>
-            <input type="text" id="country" name="country" placeholder="Current country" autocomplete="off" required><br>
+            <input type="text" id="address" name="address" placeholder="current address" autocomplete="off" value="{{ user.address }}" required><br>
+            <input type="text" id="city" name="city" placeholder="Current city" autocomplete="off" value="{{ user.city }}" required><br>
+            <input type="text" id="state" name="state" placeholder="Current state" value="{{ user.state }}" required><br>
+            <input type="text" id="country" name="country" placeholder="Current country" autocomplete="off" value="{{ user.country }}" required><br>
             <select id="filters" name="filters">
                 <option value="nearby">Nearby(Less than 30km away)</option>
                 <option value="in-city"> Within current city</option>

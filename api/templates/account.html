@@ -3,6 +3,9 @@
 <div class="box-container">
     <h1 class="title">{{ user.name }}</h1><br>
     <h4>{{ user.email }}</h4><br>
+    {% for msg in get_flashed_messages() %}
+    <p class="success">{{ msg }}</p>
+    {% endfor %}
     <div class="panel">
         <a href="#" class="active" id="profile">Profile</a>
         <a href="#"class="" id="services">Services</a>
@@ -30,8 +33,8 @@
                     <h5>{{ service.business_name }}</h5>
                     {% endif %}
                 </td>
-                <td><button>Edit</td>
-                <td><button>Delete</button></td>
+                <td><button><a href='{{ url_for("fa_app.edit_artisan", a_id=service.a_id) }}'>Edit</a> </button></td>
+                <td><button><a href="{{ url_for('fa_app.delete_artisan', a_id=service.a_id) }}">Delete</a></button></td>
             </tr>
             {% endfor %}
         </table>

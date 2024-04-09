@@ -1,0 +1,28 @@
+{% include 'header.html' %}
+{% if session.loggedin == True %}
+<div class="artisan-container">
+    <form class="artisan-form" enctype="multipart/form-data" action="{{ url_for('fa_app.edit_artisan', a_id=artisan.a_id)}}" method="post">
+        <h4>Update Artisan</h4>
+        <label for="business_name">Business name:</label><br>
+        <input type="text" id="business_name" name="business_name" value="{{ artisan.business_name }}" placeholder="Business name"><br>
+        <label for="service">Service/Ocupation:</label><br>
+        <input type="text" id="service" name="service" value="{{ artisan.service }}"><br>
+        <label for="address">Business Adress:</label><br>
+        <input type="text" id="address" name="address" value="{{ artisan.address }}"><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city" value="{{ artisan.city }}"><br>
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state" value="{{ artisan.state }}"><br>
+        <label for="country">Country:</label><br>
+        <input type="text" id="country" name="country" value="{{ artisan.country }}"><br>
+        <label for="phone_number">Business Phone Number:</label><br>
+        <input type="tel" id="phone_number" name="phone_number" value="{{ artisan.phone_number }}"><br>
+        <label for="email">Business Email:</label><br>
+        <input type="email" id="email" name="email" value="{{ artisan.email }}"><br>
+        <label for="bio">About:</label><br>
+        <textarea id="bio" name="bio" placeholder="Tell us about your business or more services you render">{{ artisan.bio }}</textarea><br>
+        <input type="submit" id="submit" name="submit" value="Update Service">
+    </form>
+</div>
+{% endif %}
+{% include 'footer.html' %}
