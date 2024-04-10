@@ -12,3 +12,8 @@ def home():
     if session.get('loggedin')  == True:
         user = storage.get_user(session['id'])
     return render_template('index.html', user=user)
+
+@fa_app.route("/about", strict_slashes=False)
+def about():
+    """display landing page"""
+    return render_template('about.html')

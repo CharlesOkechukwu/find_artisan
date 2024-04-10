@@ -1,0 +1,52 @@
+.about-container {
+    height: 100%;
+    width: 98%;
+    font-family: sans-serif;
+}
+.about-container h1 {
+    color: rgb(42, 38, 38);
+    padding: 7px;
+    margin-top: 15px;
+    text-align: center;
+}
+.about-container .frame1 {
+    width: 80%;
+    max-height: 40%;
+    padding: 10px;
+    margin-left: 10%;
+}
+.about-container .frame1 img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.about-container .intro {
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.about-container .add {
+    padding: 10px;
+}
+.about-container .add h2 {
+    color: rgb(42, 38, 38);
+    padding: 7px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #FC4B37;
+}
+.about-container .add img {
+    width: 80%;
+    max-height: 40%;
+    padding: 10px;
+    margin-left: 10%;
+}
+.about-container .add .add-info {
+    width: 100%;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
