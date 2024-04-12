@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Find Artisan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="api/static/images/icon.png"/>
+        <script src="https://kit.fontawesome.com/51f8b67884.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="api/static/css/header.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kufam:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="api/static/css/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="api/static/css/signup.css"/>
+        <link rel="stylesheet" type="text/css" href="api/static/css/login.css"/>
+        <link rel="stylesheet" type="text/css" href="api/static/css/home.css"/>
+        <link rel="stylesheet" type="text/css" href="api/static/css/add_artisan.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/view_artisan.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/display.css"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/account.css"/>
+        <link rel="stylesheet" type="text/css" href="api/static/css/about.css"/>
+    </head>
+    <body>
+    <div class="header">
+        <div class="topic">
+            <header class="title">
+                <a href="/api"><h1><span class="orange">find</span>Artisan</h1></a>
+            </header>
+        </div>
+        <nav class="nav">
+            <a href="/api/signup">Signup</a>
+            <a href="/api/login">Login</a>
+        </nav>
+    </div>
+  <div class="about-container">
+    <h1>Connecting People With Artisans , Midwifing Great Experiences!</h1>
+    <div class="frame1">
+        <img src="api/static/images/home.png" alt="Home icon">
+    </div>
+    <p class="intro">Find service providers living near you! They are just a search away! Join the connected World today!<br> Find service providres around you even when you travel to an foreign land, Findartisan got you covered! </p>
+    <div class="add">
+        <h2>Offer Your Services To People</h2>
+        <img src="api/static/images/homelogin.png" alt="add icon">
+        <p class="add-info">Add your service to get seen and patronized by people in your area, get more visibility for your skill or service.</p>
+        <h2>Choose From A Variety Of Artisans Around You</h2>
+        <img src="api/static/images/display.png" alt="display icon">
+        <p class="add-info">From home cleaning to luandry to electrical works, that nice hair cut, coumputer services to auto repairs and so on, interact with a variety of artisans near you or even far away and make the best choice!</p>
+        <h2>Patronize And Leave  A Review!</h2>
+        <img src="api/static/images/singlepage.png" alt="single page icon">
+        <p class="add-info">Check out samples of the works of various artisans, make informed decisons from reviews on the artisans service, locate artisans using their address, patronize and leave a review of artisan's service for other's to see!</p>
+    </div>
+  </div>
+    <footer class="foot">
+      <p><a href="{{ url_for('fa_app.about') }}">About Us</a></p>
+      <h4>Contact Us!</h4>
+      <p class="email"><a href="support@findartisan.com">support@findartisan.com</a></p>
+      <p class="copy">copyright@findartisans 2024. All rights reserved</p>
+  </footer>
+</body>
+</html>
