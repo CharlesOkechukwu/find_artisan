@@ -23,4 +23,4 @@ if __name__ != "__main__":
     app.logger.setLevel(gunicorn_logger.level)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(threaded=True, debug=True)
