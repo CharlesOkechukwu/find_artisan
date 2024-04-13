@@ -31,10 +31,10 @@
         <nav class="nav">
             {% if session.loggedin == True %}
             <a href="{{ url_for('fa_app.account')}}">Account</a>
-            <a href="/api/logout">Log out</a>
+            <a href="{{ url_for('fa_app.logout') }}">Log out</a>
             {% else %}
-            <a href="/api/signup">Signup</a>
-            <a href="/api/login">Login</a>
+            <a href="{{ url_for('fa_app.register') }}">Signup</a>
+            <a href="{{ url_for('fa_app.login') }}">Login</a>
             {% endif %}
         </nav>
     </div>
