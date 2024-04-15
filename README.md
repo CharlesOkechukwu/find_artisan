@@ -30,7 +30,7 @@ Enables a user register for the findartisan service, only registered users can l
 * password
 On sucessful registration, the user is now allowed to add their service if he/she is an artisan.
 
-![homepage](/api/static/images/homelogin.png)
+![homepage](/api/static/images/home.png)
 
 ### Add Services
 When adding a service you render, you must be logged in or have an account. In the form that is displayed, the user would enter the following information:
