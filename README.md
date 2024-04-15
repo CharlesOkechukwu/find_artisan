@@ -18,4 +18,4 @@ Enables a user register for the findartisan service, only registered users can l
 * country
 * password
 On sucessful registration, the user is now allowed to add their service if he/she is an artisan.
-![homepage](https://github.com/CharlesOkechukwu/find_artisan/api/static/images/home.png)
+![homepage](/api/static/images/home.png)
