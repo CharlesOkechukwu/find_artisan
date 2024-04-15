@@ -64,3 +64,10 @@
 .login-form form p a {
     color: #FC4B37;
 }
+@media screen and (max-width: 600px){
+    .login-form form {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

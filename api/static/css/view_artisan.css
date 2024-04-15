@@ -177,3 +177,21 @@
     font-family: sans-serif;
     padding: 10px 0 10px 0;
 }
+@media screen and (max-width: 600px) {
+    .view-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .view-container .sub-container .top-view {
+        display: flex;
+        flex-direction: column;
+    }
+    .view-container .sub-container .images {
+        display: flex;
+        flex-direction: column;
+    }
+    .view-container .top-view .details h1 {
+        font-size: 25px;
+    }
+
+}
