@@ -1,7 +1,11 @@
 # FIND ARTISAN WEB APPLICATION
 
 ## Description
+To solve the problem of people who moved into a new city or neigbourhood having difficulty to source great artisans, I came up with an idea of a web application to connect users to artisans around them.
 This application would enable users in Nigeria locate service providres/artisans around them. It employs a simple feature to display artisans or service providres in the city of the user. The user can click on an artisan's profile to retrieve details about the various services the artisan offer, contact the artisan through the contact details provided by the artisan and after using the artisan's service, leave a review and rating of the service for future users to see.
+
+The application is deployed here: http://web-01.codefotress.tech
+
 
 ### Technologies Used:
 * Front-End: HTML, jinja, CSS and Jquery
