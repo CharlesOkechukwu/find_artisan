@@ -72,6 +72,11 @@ class Storage:
         reviews = self.__session.query(Review).filter_by(a_id=a_id).all()
         return reviews
     
+    def get_review(self, rid):
+        """get a review by it's id"""
+        review = self.__session.query(Review).filter_by(rid=rid).first()
+        return review
+    
     def get_services(self, input):
         """Select all services that match a string"""
         querystr = "%{}%".format(input)

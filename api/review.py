@@ -20,4 +20,18 @@ def add_review(a_id):
         storage.save()
         reviewed = True
         msg = "Your Review Was Added Sucessfully!"
-        return redirect(url_for('fa_app.view_artisan', a_id=a_id, reviewd=reviewed,))
+        return redirect(url_for('fa_app.view_artisan', a_id=a_id, reviewed=reviewed,))
+
+@fa_app.route("/review/<a_id>/<int:rid>", strict_slashes=False, methods=['POST'])
+def update_review(a_id, rid):
+    """update a review"""
+    if request.method == 'POST':
+        review = storage.get_review(rid)
+        rating = request.form['rating']
+        comment = request.form['comment']
+        if review != "":
+            review.rating = rating
+        if comment != "":
+            review.comment = comment
+        storage.save()
+    return redirect(url_for('fa_app.view_artisan', a_id=a_id))

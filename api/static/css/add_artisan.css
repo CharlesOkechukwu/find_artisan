@@ -65,3 +65,8 @@
     font-size: 15px;
     padding: 4px;
 }
+.artisan-container form .error {
+    color: red;
+    font-size: 15px;
+    padding: 4px;
+}

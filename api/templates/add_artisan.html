@@ -4,6 +4,9 @@
         <h4>Add Artisan</h4>
         <p class="success">{{ msgs.success }}</p>
         <p class="success">{{ msgs.more }}</p>
+        {% for msg in get_flashed_messages() %}
+        <p class="error">{{ msg }}</p>
+        {% endfor %}
         <label for="business_name">Business name:</label><br>
         <input type="text" id="business_name" name="business_name"><br>
         <label for="service">Service/Ocupation:</label><br>

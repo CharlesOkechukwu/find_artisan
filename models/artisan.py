@@ -49,7 +49,8 @@ class Artisan(Base):
     def coordinates(self):
         """set coordinates of an address"""
         from geopy.geocoders import Nominatim
-        full_address = self.address + ", " + self.city + ", " + self.state + ", " + self.country
+        full_address = self.address + ", " + self.city
+        full_address = full_address + ", " + self.state + ", " + self.country
         geolocator = Nominatim(user_agent = "fa_app")
         location = geolocator.geocode(full_address)
         if location is None:

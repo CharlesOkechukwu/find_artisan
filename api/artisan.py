@@ -17,9 +17,6 @@ def add_artisan():
     else:
         msgs = {}
         if request.method == 'POST':
-            upload_folder = 'api/static/uploads'
-            current_app.config['UPLOAD'] = upload_folder
-            current_app.config['UPLOAD_FOLDER'] = '/static/uploads/'
             name = session['username']
             business_name = request.form['business_name']
             service = request.form.get('service', False)
@@ -30,34 +27,14 @@ def add_artisan():
             phone_number = request.form['phone_number']
             email = request.form['email']
             bio = request.form['bio']
-            if request.files['image1'] != '':
-                file1 = request.files['image1']
-                filename = secure_filename(file1.filename)
-                file1.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image1 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-            else:
-                image1 = None
-            if request.files['image2'] != '':
-                file2 = request.files['image2']
-                filename = secure_filename(file2.filename)
-                file2.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image2 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-            else:
-                image2 = None
-            if request.files['image3'] != '':
-                file3 = request.files['image3']
-                filename = secure_filename(file3.filename)
-                file3.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image3 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-            else:
-                image3 = None
-            if request.files['image4'] != '':
-                file4 = request.files['image4']
-                filename = secure_filename(file4.filename)
-                file4.save(os.path.join(current_app.config['UPLOAD'], filename))
-                image4 = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-            else:
-                image4 = None
+            file1 = request.files['image1']
+            image1 = upload_file(file1)
+            file2 = request.files['image2']
+            image2 = upload_file(file2)
+            file3 = request.files['image3']
+            image3 = upload_file(file3)
+            file4 = request.files['image4']
+            image4 = upload_file(file4)
             artisan_dict = {
                 "user_id": session['id'], "name": name, "business_name": business_name,
                 "service": service, "address": address, "city": city, "state": state,
@@ -72,6 +49,27 @@ def add_artisan():
             msgs.update(success = "Service added sucessfully!")
             msgs.update(more = "Have more services you render? Add them below!")
         return render_template('add_artisan.html', msgs=msgs)
+
+def allowed_file(filename):
+    """check if file is allowed"""
+    allowed = ['png', 'jpg', 'jpeg']
+    return '.' in filename and filename.split('.')[-1] in allowed
+
+def upload_file(file):
+    """Upload a file and return url to path"""
+    upload_folder = 'api/static/uploads'
+    current_app.config['UPLOAD'] = upload_folder
+    current_app.config['UPLOAD_FOLDER'] = '/static/uploads/'
+    filename = secure_filename(file.filename)
+    if filename == '':
+        return None
+    if file and allowed_file(filename):
+        file.save(os.path.join(current_app.config['UPLOAD'], filename))
+        image = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+        return image
+    else:
+        flash("Invalid file format, only png, jpg and jpeg allowed!")
+        return None
 
 @fa_app.route("/artisan/<a_id>", strict_slashes=False)
 def view_artisan(a_id):
